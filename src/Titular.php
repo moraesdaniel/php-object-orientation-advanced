@@ -4,11 +4,13 @@ class Titular
 {
     private Cpf $cpf;
     private string $nome;
+    private Endereco $endereco;
 
-    public function __construct(Cpf $cpf, string $nome) {
+    public function __construct(Cpf $cpf, string $nome, Endereco $endereco) {
         $this->cpf = $cpf;
         $this->validarNomeTitular($nome);
         $this->nome = $nome;
+        $this->endereco = $endereco;
     }
 
     public function getCpf(): string
@@ -19,6 +21,11 @@ class Titular
     public function getNome(): string
     {
         return $this->nome;
+    }
+
+    public function getEndereço(): Endereco
+    {
+        return $this->endereco;
     }
 
     private function validarNomeTitular(string $nomeTitular)

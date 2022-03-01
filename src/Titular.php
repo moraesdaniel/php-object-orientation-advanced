@@ -16,12 +16,4 @@ class Titular extends Pessoa
     {
         return $this->endereco;
     }
-
-    private function validarNomeTitular(string $nomeTitular)
-    {
-        if (strlen($nomeTitular) < 5) {
-            echo "Nome precisa ter no mínimo 5 caracteres!";
-            exit;
-        }
-    }
 }

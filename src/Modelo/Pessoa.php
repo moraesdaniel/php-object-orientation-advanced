@@ -2,7 +2,7 @@
 
 namespace Moraes\Banco\Modelo;
 
-class Pessoa
+abstract class Pessoa
 {
     protected string $nome;
     protected Cpf $cpf;

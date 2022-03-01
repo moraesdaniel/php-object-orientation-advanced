@@ -2,6 +2,8 @@
 
 namespace Moraes\Banco\Modelo\Conta;
 
+use Moraes\Banco\Modelo\{Pessoa, Cpf, Endereco};
+
 class Titular extends Pessoa
 {
     private Endereco $endereco;

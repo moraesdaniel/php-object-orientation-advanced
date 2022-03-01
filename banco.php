@@ -1,9 +1,13 @@
 <?php
 
-require_once 'src/Conta.php';
-require_once 'src/Titular.php';
-require_once 'src/Cpf.php';
-require_once 'src/Endereco.php';
+require_once 'src/Modelo/Pessoa.php';
+require_once 'src/Modelo/Conta/Conta.php';
+require_once 'src/Modelo/Conta/Titular.php';
+require_once 'src/Modelo/Cpf.php';
+require_once 'src/Modelo/Endereco.php';
+
+use Moraes\Banco\Modelo\Conta\{Conta, Titular};
+use Moraes\Banco\Modelo\{Cpf, Endereco};
 
 $primeiraConta = new Conta(
     new Titular(
@@ -22,10 +26,8 @@ $segundaConta = new Conta(
 );
 
 echo "Titular: " . $primeiraConta->getNomeTitular() . PHP_EOL;
-echo "CPF: " . $primeiraConta->getCpfTitular() . PHP_EOL;
 echo "=====================================================================" . PHP_EOL;
 echo "Titular: " . $segundaConta->getNomeTitular() . PHP_EOL;
-echo "CPF: " . $segundaConta->getCpfTitular() . PHP_EOL;
 
 echo Conta::getNumeroDeContas() . PHP_EOL;
 

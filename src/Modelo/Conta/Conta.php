@@ -2,7 +2,7 @@
 
 namespace Moraes\Banco\Modelo\Conta;
 
-class Conta
+abstract class Conta
 {
     private Titular $titular;
     private float $saldo;
@@ -38,12 +38,14 @@ class Conta
 
     public function sacar(float $valor): void
     {
-        if ($valor > $this->saldo) {
+        $tarifaSaque = $valor * $this->getPercentualTarifa();
+        $valorASacar = $valor + $tarifaSaque;
+        if ($valorASacar > $this->saldo) {
             echo 'Saldo insuficiente!';
             return;
         };
 
-        $this->saldo -= $valor;
+        $this->saldo -= $valorASacar;
     }
 
     public function depositar(float $valor): void
@@ -56,19 +58,10 @@ class Conta
         $this->saldo += $valor;
     }
 
-    public function transferir(float $valor, Conta $contaDestino): void
-    {
-        if ($valor > $this->saldo) {
-            echo 'Saldo indisponível!';
-            return;
-        };
-        
-        $this->sacar($valor);
-        $contaDestino->depositar($valor);
-    }
-
     public static function getNumeroDeContas(): int
     {
         return self::$numeroDeContas;
     }
+
+    abstract protected function getPercentualTarifa(): float;
 }

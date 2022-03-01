@@ -1,9 +1,6 @@
 <?php
 
-use Moraes\Banco\Modelo\Conta\Conta;
-use Moraes\Banco\Modelo\Conta\ContaCorrente;
-use Moraes\Banco\Modelo\Conta\ContaPoupanca;
-use Moraes\Banco\Modelo\Conta\Titular;
+use Moraes\Banco\Modelo\Conta\{Conta, ContaCorrente, ContaPoupanca, Titular};
 use Moraes\Banco\Modelo\Cpf;
 use Moraes\Banco\Modelo\Endereco;
 

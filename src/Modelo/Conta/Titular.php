@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelo\Conta;
+namespace Moraes\Banco\Modelo\Conta;
 
 class Titular extends Pessoa
 {

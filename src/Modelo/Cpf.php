@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelo;
+namespace Moraes\Banco\Modelo;
 
 class Cpf {
     private string $cpf;

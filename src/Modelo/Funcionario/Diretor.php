@@ -10,4 +10,8 @@ class Diretor extends Funcionario
     {
         return $this->getSalario() * 2;
     }
+
+    public function validarSenha(string $senha): bool {
+        return $senha == '1234';
+    }
 }

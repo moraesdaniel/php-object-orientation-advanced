@@ -2,6 +2,8 @@
 
 namespace Moraes\Banco\Modelo;
 
+use PropertyAccess;
+
 /**
  * class Endereco
  * @property-read string $cidade 
@@ -11,6 +13,8 @@ namespace Moraes\Banco\Modelo;
  */
 class Endereco 
 {
+    use PropertyAccess;
+
     private string $cidade;
     private string $bairro;
     private string $rua;
@@ -53,12 +57,6 @@ class Endereco
     {
         $method = "get" . ucfirst($attributeName);
         return $this->$method();
-    }
-
-    public function __set($attributeName, $value)
-    {
-        $method = "set" . ucfirst($attributeName);
-        return $this->$method($value);
     }
 
     public function setCidade($cidade): void
